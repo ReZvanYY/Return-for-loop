@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse</title>
+    <h1>Reverse the input!</h1>
+    <style>
+        body {
+            text-align: center;
+            background-color: black;
+        }
+        h1 {
+            color: white;
+            text-shadow: 5px 5px 5px red;
+        }
+
+        .text1 {
+            font-size: large;
+            border: outset gray 10px;
+            height: 250px;
+            width: 600px;
+            display: block;
+            margin: auto;
+            background-color: transparent;
+            color: red;
+            box-shadow: 0px 5px 10px 5px red;
+
+        }
+
+        input{
+            height: 50px;
+            width: 300px;
+            border: inset red 5px;
+            background-color: transparent;
+            color: red;
+            }
+        button{
+            height: 60px;
+            border: inset red 5px;
+            background-color: transparent;
+            color: red;
+            }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        let html = document.getElementById('app');
+
+
+
+        updateView();
+        function updateView() {
+            html.innerHTML = /*HTML*/`
+            <input id="userInput" type="text" placeholder="Enter text"></input>
+            <button onclick="returnValue()">Reverse</button> 
+            <br><br><br>
+            <div id="textBox" class="text1"></div>
+                        
+            
+            `;
+        }
+
+        function returnValue() {
+            let reversedSentence = '';
+
+            let userText = document.getElementById('userInput').value;
+            console.log("input: " + userText)
+
+            for (let i = userText.length - 1; i >= 0; i--) {
+                reversedSentence += userText[i];
+            }
+
+            userText = reversedSentence
+            document.getElementById('textBox').innerHTML = userText;
+
+        }
+    </script>
+</body>
+
+</html>
